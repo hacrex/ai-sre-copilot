@@ -1,0 +1,30 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+htmlcov
+.coverage
+coverage.xml
+
+# Documentation
+docs/
+*.md
+LICENSE
+
+# Dev files
+.env
+.env.*
+!.env.example
+.pre-commit-config.yaml
+.gitignore
+.gitmessage
+
+# Infrastructure (not needed in image)
+infra/
+observability/
+scripts/
