@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-sre-api
+  namespace: ai-sre
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ai-sre-api
+  template:
+    metadata:
+      labels:
+        app: ai-sre-api
+    spec:
+      containers:
+        - name: api
+          image: ai-sre-copilot:dev
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
